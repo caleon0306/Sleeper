@@ -2,7 +2,7 @@ import unittest
 
 from sleeper_api import base_api
 from sleeper_api import Users
-from sleeper_api import Leages
+from sleeper_api import Leagues
 
 
 
