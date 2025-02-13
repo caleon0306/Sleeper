@@ -2,8 +2,9 @@ import requests
 import json
 
 class Base():
-    def _request(self, url : str):
+    def _request(self, url : str) -> dict:
         
+        #ensure the response is OK
         try:
             result = requests.get(url)
             result.raise_for_status()
