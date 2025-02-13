@@ -1,8 +1,8 @@
 import unittest
 
-import sleeper_api.base_api as Base_API
-import sleeper_api.Users as User_API
-import sleeper_api.Leagues as League_API
+from sleeper_api.base_api import Base
+from sleeper_api.Users import User as User_API
+from sleeper_api.Leagues import League as League_API
 
 class testUsers(unittest.TestCase):
     """
