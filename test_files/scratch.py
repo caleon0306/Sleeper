@@ -13,6 +13,6 @@ if __name__ == "__main__":
     userOBJ = Users.User(user)
     
     league = Leagues.League("-12")
-    print(type(league.getAllLeagueInfo()))
+    print(league.getMatchupsForWeek())
     
     

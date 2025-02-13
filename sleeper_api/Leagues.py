@@ -24,6 +24,6 @@ class League(Base):
         return self._request(self.league_base + "/users")
     
     #returns matchups for the given week, default is one
-    def getMatchupsForWeek(self, week:str = 1) -> dict:
+    def getMatchupsForWeek(self, week:str = "1") -> dict:
         return self._request(self.league_base + "/matchups/" + week)
     
