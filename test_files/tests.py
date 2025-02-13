@@ -1,1 +1,1 @@
-#python -m unittest discover <test_directory>
+#python -m unittest discover test_files
