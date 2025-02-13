@@ -12,7 +12,7 @@ if __name__ == "__main__":
 
     userOBJ = Users.User(user)
     
-    league = Leagues.League("-12")
+    league = Leagues.League("1180209400990347264")
     print(league.getMatchupsForWeek())
     
     

@@ -23,5 +23,12 @@ class testLeagues(unittest.TestCase):
         self.assertEqual(leagueOBJ.getUsers(), [])
         self.assertIsInstance(leagueOBJ.getMatchupsForWeek(), HTTPError)
 
+    def testInvalidMatchupWeek(self):
+
+        leagueID = "1180209400990347264"
+        leagueOBJ =League(leagueID)
+
+        self.assertEqual(leagueOBJ.getMatchupsForWeek(), [])
+
 if __name__ == '__main__':
     unittest.main()
