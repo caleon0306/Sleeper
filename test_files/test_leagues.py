@@ -21,6 +21,7 @@ class testLeagues(unittest.TestCase):
         self.assertIsInstance(leagueOBJ.getAllLeagueInfo(), HTTPError)
         self.assertEqual(leagueOBJ.getRosters(), None)
         self.assertEqual(leagueOBJ.getUsers(), [])
+        self.assertIsInstance(leagueOBJ.getMatchupsForWeek(), HTTPError)
 
 if __name__ == '__main__':
     unittest.main()
