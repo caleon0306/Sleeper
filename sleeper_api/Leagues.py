@@ -27,3 +27,10 @@ class League(Base):
     def getMatchupsForWeek(self, week:str = "1") -> dict:
         return self._request(self.league_base + "/matchups/" + week)
     
+"""
+TODO TEST ONCE MATCHUPS ARE OUT
+    def getSeasonMatchups(self) -> dict:
+        weeklyMatchups = []
+        for week in range(1, 19):
+"""
+    
