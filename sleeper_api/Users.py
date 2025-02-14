@@ -1,9 +1,11 @@
 from sleeper_api.base_api import Base
 from PIL import Image
 
+from sleeper_api.NFL_state import State
 
 DEFAULT_SPORT = "nfl"
-DEFUALT_SEASON = "2025"
+DEFAULT_SEASON = State().getCurrentState()["season"]
+DEFAULT_WEEK = State().getCurrentState()["week"]
 
 class User(Base):
 
