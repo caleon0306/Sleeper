@@ -29,10 +29,5 @@ class testUsers(unittest.TestCase):
         with self.assertRaises(TypeError):
             User(userInput)        
 
-    def testGetAllLeagueIDs(self):
-        userID = "1061742576467808256"
-        userOBJ = User(userID)
-        self.assertEqual(userOBJ.getAllLeagueIDs(), ['1180209400990347264'])
-
 if __name__ == "__main__":
     unittest.main()

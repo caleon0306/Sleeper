@@ -22,16 +22,4 @@ class User(Base):
         self.username = result['username']
         self.user_id = result['user_id']
 
-    def getAllLeagueIDs(self, sport:str = DEFAULT_SPORT , season:str = DEFUALT_SEASON) -> list[str]:
-        
-        sleeperAPI = "https://api.sleeper.app/v1/user/" + self.user_id + "/leagues/" + sport + "/" + season
-        result = self._request(sleeperAPI)
-
-        #init league ids variable
-        self.league_ids = []
-
-        #add all current leagues to leagueIDS
-        for curLeague in result:
-            self.league_ids.append(curLeague["league_id"])
-        
-        return self.league_ids
+        print(result)
