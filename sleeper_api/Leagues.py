@@ -22,7 +22,7 @@ class League(Base):
         return self._request(self.league_base + "/rosters")
     
     #return all users in a league
-    def getUsers(self) -> dict:
+    def getUsers(self) -> list:
         return self._request(self.league_base + "/users")
     
     #returns matchups for the given week, default is one
