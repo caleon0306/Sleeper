@@ -25,9 +25,11 @@ class User(Base):
         self.display_name = result['display_name']
         self.avatar_id = result['avatar']
 
-    #returns an image of the user avatar that can be displayed using .show()
+    #returns an Image.Image object of the user avatar that can be displayed using .show()
     def getAvatar(self) -> Image.Image:
         return self._request("https://sleepercdn.com/avatars/" + self.avatar_id, image = True)
     
+    #returns an Image.Image object for the user thumbnail that can be displayed using .show()
     def getThumbnail(self) -> Image.Image:
         return self._request("https://sleepercdn.com/avatars/thumbs/" + self.avatar_id, image = True)
+    
