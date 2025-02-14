@@ -12,5 +12,7 @@ if __name__ == "__main__":
     leagueID = "1180209400990347264"
 
     userOBJ = Users.User(user)
-    userOBJ.getAvatar().show()
-    userOBJ.getThumbnail().show()
+    leagueOBJ = Leagues.League(leagueID)
+
+    print(NFL_state.State().cur_state)
+    print(leagueOBJ.getMatchupsForWeek())
