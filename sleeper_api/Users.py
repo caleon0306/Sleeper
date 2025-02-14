@@ -21,5 +21,5 @@ class User(Base):
 
         self.username = result['username']
         self.user_id = result['user_id']
-
-        print(result)
+        self.display_name = result['display_name']
+        self.avatar_id = result['avatar']

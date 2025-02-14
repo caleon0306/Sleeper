@@ -15,6 +15,8 @@ class testUsers(unittest.TestCase):
 
         self.assertEqual(userOBJ.username, "csonal")
         self.assertEqual(userOBJ.user_id, "1061742576467808256")
+        self.assertEqual(userOBJ.display_name, "Csonal")
+        self.assertEqual(userOBJ.avatar_id, "d55d1f7075eda01948318de4af616075")
 
     def testFindByUserID(self):
         userID = "1061742576467808256"
