@@ -18,7 +18,7 @@ class League(Base):
         return self._request(self.league_base)
     
     #return all roster information for the league
-    def getRosters(self) -> dict:
+    def getRosters(self) -> list:
         return self._request(self.league_base + "/rosters")
     
     #return all users in a league
