@@ -11,11 +11,6 @@ if __name__ == "__main__":
     user = "1290Tyler"
     leagueID = "1180209400990347264"
 
-    leagueOBJ = Leagues.League(leagueID)
-    rosters = leagueOBJ.getRosters()
-
-    print(type(rosters))
-
-    print()
-    for r in rosters:
-        print(type(r))
+    userOBJ = Users.User(user)
+    userOBJ.getAvatar().show()
+    userOBJ.getThumbnail().show()
