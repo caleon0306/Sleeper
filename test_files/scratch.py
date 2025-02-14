@@ -8,12 +8,11 @@ from sleeper_api import NFL_state
 #python -m test_files.scratch
 
 if __name__ == "__main__":
-    user = "csonal"
+    user = "1290Tyler"
     leagueID = "1180209400990347264"
 
-    curState = NFL_state.State()
-    curStateDict = curState.getCurrentState()
+    userOBJ = Users.User(user)
+    leagues = userOBJ.getAllLeagues()
 
-    print(type(NFL_state.State().getCurrentState()["season"]))
-    
-    
+    for l in leagues:
+        print(type(l))

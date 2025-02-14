@@ -35,3 +35,6 @@ class User(Base):
     def getThumbnail(self) -> Image.Image:
         return self._request("https://sleepercdn.com/avatars/thumbs/" + self.avatar_id, image = True)
     
+    #return all of the leagues a user is in a list of dicts
+    def getAllLeagues(self, sport:str = DEFAULT_SPORT, season:str = DEFAULT_SEASON) -> list:
+        return self._request("https://api.sleeper.app/v1/user/" + self.user_id + "/leagues/" + sport + "/"+ season)

@@ -42,5 +42,19 @@ class testUsers(unittest.TestCase):
         self.assertIsInstance(userOBJ.getAvatar(), Image.Image)
         self.assertIsInstance(userOBJ.getThumbnail(), Image.Image)
 
+    def testGetAllLeagues(self):
+        username = "Csonal"
+        userOBJ = User(username)
+
+        leagues = userOBJ.getAllLeagues()
+        #ensire leagues is a list
+        self.assertIsInstance(leagues, list)
+        
+        #check to make sureeach list comes as a dict
+        if leagues != []:
+            for league in leagues:
+                self.assertIsInstance(league, dict)
+                
+
 if __name__ == "__main__":
     unittest.main()
