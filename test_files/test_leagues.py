@@ -11,6 +11,7 @@ class testLeagues(unittest.TestCase):
         leagueOBJ = League(leagueID)
 
         self.assertEqual(leagueOBJ.league_id, leagueID)
+        self.assertIsInstance(leagueOBJ.getAllLeagueInfo(), dict)
         self.assertEqual(leagueOBJ.getAllLeagueInfo()["league_id"], leagueID)
 
     #test attempting to get information from an invalid league
@@ -31,7 +32,7 @@ class testLeagues(unittest.TestCase):
 
         self.assertEqual(leagueOBJ.getMatchupsForWeek(), [])
 
-    
+
 
 if __name__ == '__main__':
     unittest.main()
