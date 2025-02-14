@@ -24,6 +24,17 @@ class testLeagues(unittest.TestCase):
         self.assertEqual(leagueOBJ.getUsers(), [])
         self.assertIsInstance(leagueOBJ.getMatchupsForWeek(), HTTPError)
 
+    #check to make sure roster information is a list containing dicts
+    def testGetRosters(self):
+        leagueID = "1180209400990347264"
+        leagueOBJ = League(leagueID)
+
+        rosters = leagueOBJ.getRosters()
+
+        self.assertIsInstance(rosters, list)
+        for roster in rosters:
+            self.assertIsInstance(roster, dict)
+
     #TODO TEST ONCE MATCHUPS ARE PUT OUT
     def testInvalidMatchupWeek(self):
 
