@@ -12,6 +12,8 @@ if __name__ == "__main__":
     leagueID = "1180209400990347264"
 
     curState = NFL_state.State()
-    print(curState.getCurrentState())
+    curStateDict = curState.getCurrentState()
+
+    print(type(NFL_state.State().getCurrentState()["season"]))
     
     

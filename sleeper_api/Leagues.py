@@ -1,7 +1,9 @@
 from sleeper_api.base_api import Base
+from sleeper_api.NFL_state import State
 
 DEFAULT_SPORT = "nfl"
-DEFAULT_SEASON = "2025"
+DEFAULT_SEASON = State().getCurrentState()["season"]
+DEFAULT_WEEK = State().getCurrentState()["week"]
 
 class League(Base):
 
