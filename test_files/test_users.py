@@ -35,6 +35,7 @@ class testUsers(unittest.TestCase):
         with self.assertRaises(TypeError):
             User(userInput)
 
+    #test to make sure User.getAvatar and .getthumbnail return Image.Image objects
     def testImageGettings(self):
         username = "Csonal"
         userOBJ = User(username)
