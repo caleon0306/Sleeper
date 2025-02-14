@@ -12,7 +12,9 @@ if __name__ == "__main__":
 
     userOBJ = Users.User(user)
     
+    print(userOBJ.getAvatar().show())
+    print(userOBJ.getThumbnail().show())
+
     league = Leagues.League("1180209400990347264")
-    print(league.getMatchupsForWeek())
     
     
