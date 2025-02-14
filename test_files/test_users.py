@@ -4,6 +4,8 @@ from sleeper_api.base_api import Base
 from sleeper_api.Users import User
 from sleeper_api.Leagues import League
 
+from PIL import Image
+
 class testUsers(unittest.TestCase):
     """
     Test cases for the User class
@@ -31,7 +33,14 @@ class testUsers(unittest.TestCase):
         userInput = "-25"
 
         with self.assertRaises(TypeError):
-            User(userInput)        
+            User(userInput)
+
+    def testImageGettings(self):
+        username = "Csonal"
+        userOBJ = User(username)
+
+        self.assertIsInstance(userOBJ.getAvatar(), Image.Image)
+        self.assertIsInstance(userOBJ.getThumbnail(), Image.Image)
 
 if __name__ == "__main__":
     unittest.main()
