@@ -29,6 +29,9 @@ class League(Base):
     def getMatchupsForWeek(self, week:str = str(DEFAULT_WEEK)) -> list:
         return self._request(self.league_base + "/matchups/" + week)
     
+    #TODO GETTING THE PLAYOFF BRACKET
+    #TODO SEE IF I CAN FIND LEAGUE ID FROM LAST SEASON
+
 """
 TODO TEST ONCE MATCHUPS ARE OUT
     def getSeasonMatchups(self) -> dict:
