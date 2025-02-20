@@ -18,7 +18,8 @@ if __name__ == "__main__":
 
     leagueOBJ2024 = Leagues.League(leagueID2024)
 
-    tradedPicks = leagueOBJ2024.getTradedPicks()
-    print(type(tradedPicks[0]["round"]))
+    drafts = userOBJ.getAllDrafts()
 
-    #print(leagueOBJ.getMatchupsForWeek("1"))
+    print(type(drafts))
+    for x in drafts:
+        print(type(x))

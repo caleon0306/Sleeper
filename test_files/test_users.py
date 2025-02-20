@@ -56,6 +56,16 @@ class testUsers(unittest.TestCase):
             for league in leagues:
                 self.assertIsInstance(league, dict)
                 
+    def testGetAllDrafts(self):
+        username = "Csonal"
+        userOBJ = User(username)
+
+        drafts = userOBJ.getAllDrafts()
+
+        self.assertIsInstance(drafts, list)
+
+        for x in drafts:
+            self.assertIsInstance(x, dict)
 
 if __name__ == "__main__":
     unittest.main()
