@@ -104,7 +104,7 @@ class testLeagues(unittest.TestCase):
         #test to make sure the correct error is recived for an invalid week
         self.assertIsInstance(leagueOBJ.getTransactions("asd"), requests.exceptions.HTTPError)
         #test invalid week returns an empty list
-        self.assertEqual(leagueOBJ.getMatchupsForWeek(25), [])
+        self.assertEqual(leagueOBJ.getTransactions(25), [])
 
 
 if __name__ == '__main__':
