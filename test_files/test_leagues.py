@@ -88,5 +88,14 @@ class testLeagues(unittest.TestCase):
         #make sure it is the correct dict
         self.assertIsInstance(bracket[0]['m'], int)
 
+    def testGetTransactions(self):
+        #leagues is a league from an already completed season
+        leagueID = "1061743196390203392"
+        leagueOBJ = League(leagueID)
+
+        transactions = leagueOBJ.getTransactions(1)
+        self.assertIsInstance(transactions, list)
+
+
 if __name__ == '__main__':
     unittest.main()

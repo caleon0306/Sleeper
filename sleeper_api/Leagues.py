@@ -37,3 +37,8 @@ class League(Base):
     #returns a list containing dict of each playoff matchup for losers bracket
     def getPlayoffLosersBracket(self) -> list:
         return self._request(self.league_base + "/losers_bracket")
+    
+    #return a list of all transactions for a given week
+    def getTransactions(self, week:str = str(DEFAULT_WEEK)) -> list:
+        #allow week to be passed as int
+        return self._request(self.league_base + "/transactions/" + str(week))
