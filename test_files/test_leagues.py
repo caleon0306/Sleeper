@@ -46,13 +46,15 @@ class testLeagues(unittest.TestCase):
         for user in users:
             self.assertIsInstance(user, dict)
 
-    #TODO TEST ONCE MATCHUPS ARE PUT OUT
-    def testInvalidMatchupWeek(self):
+    def testGetMatchups(self):
+        #leagues is a league from an already completed season
+        leagueID = "1061743196390203392"
+        leagueOBJ = League(leagueID)
 
-        leagueID = "1180209400990347264"
-        leagueOBJ =League(leagueID)
-
-        self.assertEqual(leagueOBJ.getMatchupsForWeek(), [])
+        matchups = leagueOBJ.getMatchupsForWeek(1)
+        self.assertIsInstance(matchups, list)
+        for x in matchups:
+            self.assertIsInstance(x, dict)
 
 
 

@@ -27,7 +27,8 @@ class League(Base):
     
     #returns matchups for the given week, default is current week
     def getMatchupsForWeek(self, week:str = str(DEFAULT_WEEK)) -> list:
-        return self._request(self.league_base + "/matchups/" + week)
+        #ensure week is converted to str in case week is passed as int
+        return self._request(self.league_base + "/matchups/" + str(week))
     
     #TODO GETTING THE PLAYOFF BRACKET
     #TODO SEE IF I CAN FIND LEAGUE ID FROM LAST SEASON

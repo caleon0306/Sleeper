@@ -8,11 +8,20 @@ from sleeper_api import NFL_state
 #python -m test_files.scratch
 
 if __name__ == "__main__":
-    user = "1290Tyler"
-    leagueID = "1180209400990347264"
+    user = "Csonal"
+    leagueID2025 = "1180209400990347264"
+
+    #complete 2024 season league
+    leagueID2024 = "1061743196390203392"
 
     userOBJ = Users.User(user)
-    leagueOBJ = Leagues.League(leagueID)
 
-    print(NFL_state.State().cur_state)
-    print(leagueOBJ.getMatchupsForWeek())
+    leagueOBJ2024 = Leagues.League(leagueID2024)
+
+    matchups = leagueOBJ2024.getMatchupsForWeek(1)
+
+    print(type(matchups))
+    for x in matchups:
+        print(type(x))
+
+    #print(leagueOBJ.getMatchupsForWeek("1"))
