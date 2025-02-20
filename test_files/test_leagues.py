@@ -70,6 +70,8 @@ class testLeagues(unittest.TestCase):
         bracket = leagueOBJ.getPlayoffWinnersBracket()
 
         self.assertIsInstance(bracket, list)
+        for x in bracket:
+            self.assertIsInstance(x, dict)
 
 if __name__ == '__main__':
     unittest.main()
