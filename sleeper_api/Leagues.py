@@ -30,8 +30,10 @@ class League(Base):
         #ensure week is converted to str in case week is passed as int
         return self._request(self.league_base + "/matchups/" + str(week))
     
+    #returns a list containing dict of each playoff matchup for winners bracket
     def getPlayoffWinnersBracket(self) -> list:
         return self._request(self.league_base + "/winners_bracket")
 
+    #returns a list containing dict of each playoff matchup for losers bracket
     def getPlayoffLosersBracket(self) -> list:
         return self._request(self.league_base + "/losers_bracket")
