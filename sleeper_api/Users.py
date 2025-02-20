@@ -41,5 +41,6 @@ class User(Base):
     def getAllLeagues(self, sport:str = DEFAULT_SPORT, season:str = DEFAULT_SEASON) -> list:
         return self._request(self.user_base + "/leagues/" + sport + "/"+ season)
     
+    #returna list of dicts containing all draft info for league and season
     def getAllDrafts(self, sport:str = DEFAULT_SPORT, season:str = DEFAULT_SEASON) -> list:
         return self._request(self.user_base + "/drafts/" + sport + "/" + str(season))

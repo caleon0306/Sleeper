@@ -46,3 +46,5 @@ class League(Base):
     #return a list of dicts containing all traded picks
     def getTradedPicks(self) -> list:
         return self._request(self.league_base + "/traded_picks")
+    
+    #TODO: Get all drafts for a league
