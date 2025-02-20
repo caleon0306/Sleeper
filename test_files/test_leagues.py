@@ -98,8 +98,8 @@ class testLeagues(unittest.TestCase):
         #make sure each transaction is a list
         for x in transactions:
             self.assertIsInstance(x, dict)
-        #make sure transaction returns the correct dictionary
-        self.assertIsInstance(transactions[0]['type'], str)
+            #make sure transaction returns the correct dictionary
+            self.assertIsInstance(x['type'], str)
 
         #test to make sure the correct error is recived for an invalid week
         self.assertIsInstance(leagueOBJ.getTransactions("asd"), requests.exceptions.HTTPError)
@@ -112,15 +112,14 @@ class testLeagues(unittest.TestCase):
         leagueOBJ = League(leagueID)
 
         tradedPicks = leagueOBJ.getTradedPicks()
-        
+
         #check that the return is a list containing dicts
         self.assertIsInstance(tradedPicks, list)
         for x in tradedPicks:
             self.assertIsInstance(x, dict)
-
-        #make sure the dicts are correct
-        self.assertIsInstance(tradedPicks[0]["round"], int)
-        self.assertIsInstance(tradedPicks[0]["owner_id"], int)
+            #make sure the dicts are correct
+            self.assertIsInstance(x["round"], int)
+            self.assertIsInstance(x["owner_id"], int)
 
 
 if __name__ == '__main__':
