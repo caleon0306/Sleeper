@@ -72,8 +72,8 @@ class testLeagues(unittest.TestCase):
         self.assertIsInstance(bracket, list)
         for x in bracket:
             self.assertIsInstance(x, dict)
-        #make sure it is the correct dict
-        self.assertIsInstance(bracket[0]['m'], int)
+            #make sure it is the correct dict
+            self.assertIsInstance(x['m'], int)
 
     def testGetPlayoffLosersBracket(self):
         #leagues is a league from an already completed season
