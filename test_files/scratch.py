@@ -18,8 +18,8 @@ if __name__ == "__main__":
 
     leagueOBJ2024 = Leagues.League(leagueID2024)
 
-    trans = leagueOBJ2024.getTransactions(1)
-    for x in trans:
-        print(type(x))
+    tradedPicks = leagueOBJ2024.getTradedPicks()
+    for x in tradedPicks:
+        print(x)
 
     #print(leagueOBJ.getMatchupsForWeek("1"))

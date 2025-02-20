@@ -42,3 +42,7 @@ class League(Base):
     def getTransactions(self, week:str = str(DEFAULT_WEEK)) -> list:
         #allow week to be passed as int
         return self._request(self.league_base + "/transactions/" + str(week))
+    
+    #return a list of dicts containing all traded picks
+    def getTradedPicks(self) -> list:
+        return self._request(self.league_base + "/traded_picks")
