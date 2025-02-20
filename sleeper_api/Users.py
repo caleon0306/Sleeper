@@ -15,8 +15,8 @@ class User(Base):
         """
 
 
-        sleeperAPI = "https://api.sleeper.app/v1/user/" + userInput
-        result = self._request(sleeperAPI)
+        self.user_base = "https://api.sleeper.app/v1/user/" + userInput
+        result = self._request(self.user_base)
         
         if result == None:
             raise TypeError("User not found:", userInput)
@@ -26,6 +26,8 @@ class User(Base):
         self.user_id = result['user_id']
         self.display_name = result['display_name']
         self.avatar_id = result['avatar']
+
+        self.user_base = "https://api.sleeper.app/v1/user/" + self.user_id
 
     #returns an Image.Image object of the user avatar that can be displayed using .show()
     def getAvatar(self) -> Image.Image:
@@ -37,4 +39,7 @@ class User(Base):
     
     #return all of the leagues a user is in a list of dicts
     def getAllLeagues(self, sport:str = DEFAULT_SPORT, season:str = DEFAULT_SEASON) -> list:
-        return self._request("https://api.sleeper.app/v1/user/" + self.user_id + "/leagues/" + sport + "/"+ season)
+        return self._request(self.user_base + "/leagues/" + sport + "/"+ season)
+    
+    #def getAllDrafts(self, sport:str = DEFAULT_SPORT, season:str = DEFAULT_SEASON):
+    #    return self._request()
