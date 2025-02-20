@@ -73,5 +73,16 @@ class testLeagues(unittest.TestCase):
         for x in bracket:
             self.assertIsInstance(x, dict)
 
+    def testGetPlayoffLosersBracket(self):
+        #leagues is a league from an already completed season
+        leagueID = "1061743196390203392"
+        leagueOBJ = League(leagueID)
+
+        bracket = leagueOBJ.getPlayoffLosersBracket()
+
+        self.assertIsInstance(bracket, list)
+        for x in bracket:
+            self.assertIsInstance(x, dict)
+
 if __name__ == '__main__':
     unittest.main()
