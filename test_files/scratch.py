@@ -18,10 +18,6 @@ if __name__ == "__main__":
 
     leagueOBJ2024 = Leagues.League(leagueID2024)
 
-    matchups = leagueOBJ2024.getMatchupsForWeek(1)
-
-    print(type(matchups))
-    for x in matchups:
-        print(type(x))
+    print(type(leagueOBJ2024.getPlayoffWinnersBracket()[0]))
 
     #print(leagueOBJ.getMatchupsForWeek("1"))

@@ -2,6 +2,7 @@ import unittest
 
 from requests.exceptions import HTTPError
 from sleeper_api.Leagues import League
+import requests
 
 class testLeagues(unittest.TestCase):
 
@@ -56,7 +57,19 @@ class testLeagues(unittest.TestCase):
         for x in matchups:
             self.assertIsInstance(x, dict)
 
+        #test to make sure the correct error is recived for an invalid url
+        self.assertIsInstance(leagueOBJ.getMatchupsForWeek("asd"), requests.exceptions.HTTPError)
+        #test invalid week returns an empty list
+        self.assertEqual(leagueOBJ.getMatchupsForWeek(25), [])
 
+    def testGetPlayoffWinnersBrackets(self):
+        #leagues is a league from an already completed season
+        leagueID = "1061743196390203392"
+        leagueOBJ = League(leagueID)
+
+        bracket = leagueOBJ.getPlayoffWinnersBracket()
+
+        self.assertIsInstance(bracket, list)
 
 if __name__ == '__main__':
     unittest.main()
