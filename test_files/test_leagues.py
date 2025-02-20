@@ -95,6 +95,11 @@ class testLeagues(unittest.TestCase):
 
         transactions = leagueOBJ.getTransactions(1)
         self.assertIsInstance(transactions, list)
+        #make sure each transaction is a list
+        for x in transactions:
+            self.assertIsInstance(x, dict)
+        #make sure transaction returns the correct dictionary
+        self.assertIsInstance(transactions[0]['type'], str)
 
 
 if __name__ == '__main__':
