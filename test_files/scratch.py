@@ -22,4 +22,4 @@ if __name__ == "__main__":
 
     print(type(drafts))
     for x in drafts:
-        print(type(x))
+        print(x["draft_id"])

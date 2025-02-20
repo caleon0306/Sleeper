@@ -51,7 +51,7 @@ class testUsers(unittest.TestCase):
         #ensire leagues is a list
         self.assertIsInstance(leagues, list)
         
-        #check to make sureeach list comes as a dict
+        #check to make sure each list comes as a dict
         if leagues != []:
             for league in leagues:
                 self.assertIsInstance(league, dict)
@@ -62,10 +62,13 @@ class testUsers(unittest.TestCase):
 
         drafts = userOBJ.getAllDrafts()
 
+        #check return is a list
         self.assertIsInstance(drafts, list)
-
+        #check each object in the lsit is a dict
         for x in drafts:
             self.assertIsInstance(x, dict)
+            #make sure the dict object contains the right info
+            self.assertIsInstance(drafts[0]["draft_id"], str)
 
 if __name__ == "__main__":
     unittest.main()
